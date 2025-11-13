@@ -1,26 +1,44 @@
 import { Countdown } from "@/components/Countdown";
 import { Button } from "@/components/ui/button";
 import { Calendar, Church, Home, Shirt, MessageCircle } from "lucide-react";
-import weddingBg from "@/assets/wedding-bg.png";
+import Bg1 from "@/assets/angulo-izq.png";
+import Bg2 from "@/assets/angulo-der.png";
+import Bg3 from "@/assets/fondo.png";
 
 const Index = () => {
   const whatsappNumber = "XXXXXXXXXX"; // Replace with actual WhatsApp number
-  const whatsappMessage = encodeURIComponent("Hola! Confirmo mi asistencia a la boda de Adelis y Deboda 💚");
+  const whatsappMessage = encodeURIComponent(
+    "Hola! Confirmo mi asistencia a la boda de Adelis y Deboda 💚"
+  );
 
   return (
-    <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
-      {/* Section 1: Welcome */}
-      <section 
-        className="snap-start h-screen flex items-center justify-center relative"
+    <div
+      style={{
+        backgroundImage: `url(${Bg3})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        padding: "20px",
+      }}
+      className="snap-y snap-mandatory h-screen overflow-y-scroll"
+    >
+      <div
+        className="flowers-up-left"
         style={{
-          backgroundImage: `url(${weddingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url(${Bg1})`,
         }}
-      >
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
-        <div className="relative z-10 text-center px-4">
+      ></div>
+      <div
+        className="flowers-down-right"
+        style={{
+          backgroundImage: `url(${Bg2})`,
+        }}
+      ></div>
+      {/* Section 1: Welcome */}
+      <section className="snap-start h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0 " />
+        <div className="max-w-full max-h-full relative z-10 text-center px-4">
           <div className="bg-cream/90 backdrop-blur-md rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl border border-olive-light/30">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-olive-dark mb-4">
               Nos Casamos
@@ -37,18 +55,10 @@ const Index = () => {
       </section>
 
       {/* Section 2: Countdown */}
-      <section 
-        className="snap-start h-screen flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${weddingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
-        <div className="relative z-10 text-center px-4 w-full">
-          <div className="bg-cream/90 backdrop-blur-md rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
+      <section className="snap-start h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0" />
+        <div className="max-w-full max-h-full relative z-10 text-center px-4">
+          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
             <Calendar className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-8">
               Cuenta Regresiva
@@ -62,22 +72,14 @@ const Index = () => {
       </section>
 
       {/* Section 3: Ceremony & Reception */}
-      <section 
-        className="snap-start h-screen flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${weddingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
-        <div className="relative z-10 text-center px-4 w-full">
-          <div className="bg-cream/90 backdrop-blur-md rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
+      <section className="snap-start h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0" />
+        <div className="max-w-full max-h-full relative z-10 text-center px-4">
+          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-12">
               Ceremonia & Recepción
             </h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
               {/* Ceremony */}
               <div className="space-y-4">
@@ -114,18 +116,10 @@ const Index = () => {
       </section>
 
       {/* Section 4: Dress Code */}
-      <section 
-        className="snap-start h-screen flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${weddingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
-        <div className="relative z-10 text-center px-4 w-full">
-          <div className="bg-cream/90 backdrop-blur-md rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
+      <section className="snap-start h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0" />
+        <div className="max-w-full max-h-full relative z-10 text-center p-4">
+          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
             <Shirt className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-6">
               Código de Vestimenta
@@ -136,7 +130,7 @@ const Index = () => {
             <p className="text-base md:text-lg font-sans text-olive-dark/80 mb-10 max-w-2xl mx-auto">
               Esperamos que vengas elegante para celebrar este día tan especial.
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 text-left">
               {/* Men */}
               <div className="bg-olive-light/10 rounded-2xl p-6 border border-olive-light/30">
@@ -166,30 +160,28 @@ const Index = () => {
       </section>
 
       {/* Section 5: RSVP */}
-      <section 
-        className="snap-start h-screen flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${weddingBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-background/40 backdrop-blur-[2px]" />
-        <div className="relative z-10 text-center px-4 w-full">
-          <div className="bg-cream/90 backdrop-blur-md rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl border border-olive-light/30">
+      <section className="snap-start h-screen flex items-center justify-center relative">
+        <div className="absolute inset-0" />
+        <div className="max-w-full max-h-full  relative z-10 text-center px-4">
+          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl border border-olive-light/30">
             <MessageCircle className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-6">
               Confirma tu Asistencia
             </h2>
             <p className="text-base md:text-lg font-sans text-olive-dark/80 mb-10 max-w-xl mx-auto">
-              Tu presencia es muy importante para nosotros. Por favor, confirma tu asistencia lo antes posible.
+              Tu presencia es muy importante para nosotros. Por favor, confirma
+              tu asistencia lo antes posible.
             </p>
-            
-            <Button 
+
+            <Button
               size="lg"
               className="bg-olive-dark hover:bg-olive-medium text-primary-foreground font-sans text-base md:text-lg px-8 py-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105"
-              onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank')}
+              onClick={() =>
+                window.open(
+                  `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+                  "_blank"
+                )
+              }
             >
               <MessageCircle className="mr-2 h-5 w-5" />
               Confirmar por WhatsApp
