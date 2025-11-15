@@ -114,4 +114,82 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+  @font-face {
+    font-family: "Playfair Display";
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+  }
+
+  @font-face {
+    font-family: "Great Vibes";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+  }
+
+  @font-face {
+    font-family: "Lato";
+    font-weight: 300 400 700;
+    font-style: normal;
+    font-display: swap;
+    src: url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+  }
+
+  @font-face {
+    font-family: "Cormorant Garamond";
+    font-weight: 300 400 500;
+    font-style: normal italic;
+    font-display: swap;
+    src: url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+  }
+}
+
+@layer utilities {
+  .text-script {
+    font-family: "Great Vibes", cursive;
+  }
+
+  .text-serif {
+    font-family: "Playfair Display", serif;
+  }
+
+  .text-sans {
+    font-family: "Lato", sans-serif;
+  }
+
+  .text-elegant {
+    font-family: "Cormorant Garamond", serif;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }

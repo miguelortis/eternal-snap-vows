@@ -4,6 +4,7 @@ import { Calendar, Church, Home, Shirt, MessageCircle } from "lucide-react";
 import Bg1 from "@/assets/angulo-izq.png";
 import Bg2 from "@/assets/angulo-der.png";
 import Bg3 from "@/assets/fondo.png";
+import NoviosBg from "@/assets/novios.jpg";
 
 const Index = () => {
   const whatsappNumber = "XXXXXXXXXX"; // Replace with actual WhatsApp number
@@ -19,7 +20,6 @@ const Index = () => {
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        padding: "20px",
       }}
       className="snap-y snap-mandatory h-screen overflow-y-scroll"
     >
@@ -35,30 +35,54 @@ const Index = () => {
           backgroundImage: `url(${Bg2})`,
         }}
       ></div>
-      {/* Section 1: Welcome */}
-      <section className="snap-start h-screen flex items-center justify-center relative">
-        <div className="absolute inset-0 " />
-        <div className="max-w-full max-h-full relative z-10 text-center px-4">
-          <div className="bg-cream/90 backdrop-blur-md rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl border border-olive-light/30">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-olive-dark mb-4">
+
+      {/* --- SECCIÓN 1 ACTUALIZADA --- */}
+      <section className="snap-start h-screen flex flex-col items-center justify-center relative">
+        <div className="relative w-full max-w-[60rem] h-[72vh] overflow-hidden">
+          <img
+            src={NoviosBg}
+            alt="Foto de Adelis y Deboda"
+            className="absolute inset-0 w-full h-full object-cover z-0 object-[50%,30%]"
+            style={{
+              // --- CAMBIO AQUÍ: Usando un solo linear-gradient en cada dirección con mask-composite ---
+              maskImage: `
+                linear-gradient(to top, transparent, white 50%, white 80%, transparent),
+                linear-gradient(to bottom, transparent, white 20%, white 80%, transparent),
+                linear-gradient(to left, transparent, white 20%, white 80%, transparent),
+                linear-gradient(to right, transparent, white 20%, white 80%, transparent)
+              `,
+              WebkitMaskImage: `
+                linear-gradient(to top, transparent, white 10%, white 100%, transparent),
+                linear-gradient(to bottom, transparent, white 10%, white 100%, transparent),
+                linear-gradient(to left, transparent, white 10%, white 100%, transparent),
+                linear-gradient(to right, transparent, white 10%, white 100%, transparent)
+              `,
+              maskComposite: "intersect", // Combina las áreas visibles de todas las máscaras
+              WebkitMaskComposite: "source-in", // Equivalente de 'intersect' para -webkit-
+            }}
+          />
+
+          {/* <div className="absolute inset-0 z-20 flex flex-col items-center justify-between h-full text-center px-4 py-8">
+            <h1 className="text-white text-sm md:text-base tracking-[0.3em] uppercase font-elegant [text-shadow:0_2px_8px_rgb(0_0_0/_60%)]">
               Nos Casamos
             </h1>
-            <div className="h-px w-24 bg-gold mx-auto my-6" />
-            <p className="text-2xl md:text-4xl font-serif text-olive-medium mb-2">
-              Adelis & Deboda
-            </p>
-            <p className="text-lg md:text-xl font-sans text-olive-dark/80 mt-6">
-              Sábado, 13 de Diciembre de 2025
-            </p>
-          </div>
+          </div> */}
+        </div>
+        <div className="text-center mt-[20px]">
+          <p className="text-5xl md:text-6xl font-script text-gold leading-tight">
+            Adelis & Deboda
+          </p>
+          <p className="mt-[10px] mb-[50px] text-olive-dark text-xl md:text-xl font-elegant">
+            Sábado, 13 de Diciembre de 2025
+          </p>
         </div>
       </section>
 
-      {/* Section 2: Countdown */}
+      {/* Resto de secciones sin cambios */}
       <section className="snap-start h-screen flex items-center justify-center relative">
         <div className="absolute inset-0" />
         <div className="max-w-full max-h-full relative z-10 text-center px-4">
-          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
+          <div className="p-8 md:p-12 max-w-4xl mx-auto">
             <Calendar className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-8">
               Cuenta Regresiva
@@ -71,17 +95,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Section 3: Ceremony & Reception */}
       <section className="snap-start h-screen flex items-center justify-center relative">
         <div className="absolute inset-0" />
         <div className="max-w-full max-h-full relative z-10 text-center px-4">
-          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
+          <div className="p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-12">
               Ceremonia & Recepción
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-              {/* Ceremony */}
               <div className="space-y-4">
                 <Church className="w-12 h-12 text-gold mx-auto" />
                 <h3 className="text-2xl md:text-3xl font-serif font-semibold text-olive-dark">
@@ -96,7 +118,6 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* Reception */}
               <div className="space-y-4">
                 <Home className="w-12 h-12 text-gold mx-auto" />
                 <h3 className="text-2xl md:text-3xl font-serif font-semibold text-olive-dark">
@@ -115,11 +136,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Section 4: Dress Code */}
       <section className="snap-start h-screen flex items-center justify-center relative">
         <div className="absolute inset-0" />
         <div className="max-w-full max-h-full relative z-10 text-center p-4">
-          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-4xl mx-auto shadow-2xl border border-olive-light/30">
+          <div className="p-8 md:p-12 max-w-4xl mx-auto ">
             <Shirt className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-6">
               Código de Vestimenta
@@ -132,7 +152,6 @@ const Index = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 text-left">
-              {/* Men */}
               <div className="bg-olive-light/10 rounded-2xl p-6 border border-olive-light/30">
                 <h3 className="text-xl md:text-2xl font-serif font-semibold text-olive-dark mb-4">
                   Ellos
@@ -144,7 +163,6 @@ const Index = () => {
                 </ul>
               </div>
 
-              {/* Women */}
               <div className="bg-olive-light/10 rounded-2xl p-6 border border-olive-light/30">
                 <h3 className="text-xl md:text-2xl font-serif font-semibold text-olive-dark mb-4">
                   Ellas
@@ -159,11 +177,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Section 5: RSVP */}
       <section className="snap-start h-screen flex items-center justify-center relative">
         <div className="absolute inset-0" />
         <div className="max-w-full max-h-full  relative z-10 text-center px-4">
-          <div className="bg-cream/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-3xl mx-auto shadow-2xl border border-olive-light/30">
+          <div className="p-8 md:p-12 max-w-3xl mx-auto">
             <MessageCircle className="w-12 h-12 md:w-16 md:h-16 text-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-olive-dark mb-6">
               Confirma tu Asistencia
